@@ -1,124 +1,106 @@
 
+
 <h1 align="center">Scarlet Moore</h1>
-<p align="center">
-  <b>Operations Engineer</b> &nbsp;|&nbsp; <b>Technical Product Strategy</b> &nbsp;|&nbsp; <b>MBA Candidate</b>
-</p>
-<p align="center"><i>
-Building operational tooling, telemetry pipelines, and governance systems for regulated environments.
-</i></p>
+<p align="center"><strong>Operations Engineer</strong> · <strong>Technical Product Strategy</strong> · <strong>MBA Candidate</strong></p>
+
+<p align="center"><em>Building auditable, reproducible operational tooling and telemetry pipelines for regulated environments. I design systems that make data trustworthy, observable, and cost‑ and carbon‑aware.</em></p>
+
+<hr />
+
+## Summary
+
+**Focus areas:** telemetry engineering, reproducible data pipelines, secure signing & audit trails, ML infrastructure, offline‑first PWAs, and governance tooling.  
+**Approach:** small, testable components; observable defaults; defense‑in‑depth for integrity and compliance; measurable product outcomes.
 
 ---
 
-## 🛠️ Core Stack & Technical Projects
-
-I maintain Python packages and tools focused on forensic telemetry, carbon accounting, and system reliability.
+## Core Projects (quick map)
 
 <table>
   <thead>
     <tr>
-      <th>Project</th>
-      <th>Stack</th>
-      <th>Technical Scope</th>
+      <th align="left">Project</th>
+      <th align="left">Stack</th>
+      <th align="left">Technical scope</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td><b>carbon-ops</b></td>
-      <td>Python, Vertex AI</td>
-      <td>
-        <ul>
-          <li>Telemetry &amp; Signing pipeline: converts runtime metrics to CO₂e estimates</li>
-          <li>Features ed25519 signing &amp; Merkle tree anchoring for audit trails</li>
-        </ul>
-      </td>
+      <td><strong>carbon-ops</strong></td>
+      <td>Python · Vertex AI</td>
+      <td>Telemetry ingestion → CO₂e estimation; ed25519 signing; Merkle anchoring for tamper-evident logs</td>
     </tr>
     <tr>
-      <td><b>vertex-batch-api</b></td>
-      <td>GCP, Docker</td>
-      <td>
-        <ul>
-          <li>ML infrastructure wrapper for Vertex AI batch jobs</li>
-          <li>Handles GCS streaming, automatic retries, and error classification</li>
-        </ul>
-      </td>
+      <td><strong>vertex-batch-api</strong></td>
+      <td>GCP · Docker</td>
+      <td>Batch orchestration for Vertex AI; GCS streaming; idempotent retries; error classification</td>
     </tr>
     <tr>
-      <td><b>acs-energy-toolkit</b></td>
-      <td>Pandas, Python</td>
-      <td>
-        <ul>
-          <li>Data analysis library for energy logging &amp; uncertainty estimation</li>
-          <li>Supports reproducible research workflows</li>
-        </ul>
-      </td>
+      <td><strong>acs-energy-toolkit</strong></td>
+      <td>Python · Pandas</td>
+      <td>Time-series energy analysis; uncertainty quantification; reproducible notebooks & CI data checks</td>
     </tr>
     <tr>
-      <td><b>chimera</b></td>
-      <td>Node.js, GraphQL</td>
-      <td>
-        <ul>
-          <li>Distributed research platform processing 100k+ artifacts daily</li>
-          <li>Implements consent-aware API gateways and rate limiting</li>
-        </ul>
-      </td>
+      <td><strong>chimera</strong></td>
+      <td>Node.js · GraphQL</td>
+      <td>High-throughput artifact processing; consent-aware API gateway; backpressure & rate limiting</td>
     </tr>
     <tr>
-      <td><b>kensho</b></td>
-      <td>React, Gemini</td>
-      <td>
-        <ul>
-          <li>Offline-first PWA for clinical documentation (Service Workers, IndexedDB)</li>
-          <li>Supports offline voice capture and encrypted sync</li>
-        </ul>
-      </td>
+      <td><strong>kensho</strong></td>
+      <td>React · PWA</td>
+      <td>Offline-first sync; IndexedDB conflict resolution; encrypted voice capture</td>
     </tr>
     <tr>
-      <td><b>devtools</b></td>
-      <td>CI/CD Actions</td>
-      <td>
-        <ul>
-          <li>Automated repository governance tools</li>
-          <li>Pre-commit hooks, secret scanning (gitleaks), and changelog enforcement</li>
-        </ul>
-      </td>
+      <td><strong>devtools</strong></td>
+      <td>GitHub Actions · CLI</td>
+      <td>Repo governance automation; pre-commit hooks; secret scanning; changelog enforcement</td>
     </tr>
   </tbody>
 </table>
 
 ---
 
-## 📊 Operational Deployments
+## Technical highlights & patterns
 
-- <b>QSR Compliance Transformation</b>  
-  <sup><b>Role:</b> Operations Lead / Pilot Manager</sup>  
-  • Deployed device-bound evidence logging (Bluetooth probes) across 60 locations  
-  • <b>Result:</b> Reduced non-compliance incidents by 90% and eliminated audit failures (18 months)
+### Observability
+- Structured JSON telemetry with schema validation and sampling controls.  
+- Request IDs propagated across services; Merkle roots for batch integrity.  
+- Append-only logs for forensic analysis; partitioned BigQuery tables for analytics.
 
-- <b>Throughput Optimization</b>  
-  <sup><b>Role:</b> General Manager / Analyst</sup>  
-  • Analyzed Kitchen Display System timestamps for production bottlenecks & re-engineered batching logic  
-  • <b>Result:</b> Reduced peak-hour wait times by 12%
+### Security & integrity
+- ed25519 signing for events; key rotation and hardware-backed key support.  
+- Signed manifests and Merkle anchoring for non-repudiation.  
+- Least-privilege IAM, short-lived credentials, automated secret scanning in CI.
 
-- <b>ESG Telemetry Pipeline</b>  
-  <sup><b>Role:</b> Technical Product Owner</sup>  
-  • Architected the carbon-ops ledger to track AI workload energy via BigQuery  
-  • <b>Result:</b> Identified $127k in annualized savings via cost/carbon correlation
+### Reliability & scaling
+- Idempotent workers with deterministic processing and dedup keys.  
+- Queue-based ingestion with adaptive batching and backpressure.  
+- Autoscaling thresholds tied to cost/carbon budgets.
 
----
-
-## 🧩 Capabilities
-
-<div align="center">
-
-| Product Operations       | Analysis                | ETL Pipeline Development      | Risk & Compliance Auditing   |
-|-------------------------|-------------------------|------------------------------|------------------------------|
-| Technical Prototyping   | Pilot & UAT Management  | Internal CLI Tooling         | ROI & Build/Buy Modeling     |
-| Rollout & SOP Governance| Forensic Log Analysis   | Telemetry Instrumentation    | Dashboards (Power BI/Grafana)|
-
-</div>
+### Frontend & UX
+- Offline-first patterns: service-worker strategies, local-first data models, conflict resolution.  
+- Performance: code-splitting, lazy hydration, Lighthouse-driven budgets.
 
 ---
 
-<p align="center">
-  <i>Let's connect &mdash; <a href="https://github.com/scrrlt">github.com/scrrlt</a> <a href="https://scrrlt.dev"</a></i>
-</p>
+## Architecture snapshot
+
+<pre>
+  +---------+      +----------------+      +--------------------+
+  | Clients | ---> | Ingestion Queue | ---> | Workers (idempotent)|
+  +---------+      +----------------+      +--------------------+
+       |                                         |
+       |                                         v
+       |                                  +-----------------+
+       |                                  | Append-only Log |
+       |                                  |  (Merkle roots)  |
+       |                                  +-----------------+
+       |                                         |
+       v                                         v
+  [ Offline Sync ]                         [ Analytics (BQ) ]
+       |                                         |
+       v                                         v
+  [ Local DB / PWA ]                       [ Dashboards / Alerts ]
+</pre>
+
+---
