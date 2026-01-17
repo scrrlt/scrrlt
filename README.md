@@ -18,13 +18,3 @@
   </a>
 
 </p>
-
-<!-- Profile image -->
-<p align="center">
-  <img
-    src="https://raw.githubusercontent.com/scrrlt/scrrlt/main/profile.jpeg"
-    alt="Scarlet Moore"
-    width="100%"
-    style="max-width: 960px; border-radius: 12px; box-shadow: 0 0 20px rgba(0,0,0,0.1); margin-top: 16px;"
-  />
-</p>
